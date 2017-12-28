@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/delivering_goods"
+        android:title="@string/delivering"
+        android:enabled="true"
+        android:icon="@drawable/delivering"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/delivered_goods"
+        android:enabled="true"
+        android:icon="@drawable/delivered"
+        android:title="@string/delivered"
+        app:showAsAction="ifRoom"/>
+    <item android:id="@+id/note_done"
+        android:title="@string/delivered"
+        android:enabled="true"
+        android:icon="@drawable/money"
+        app:showAsAction="ifRoom"/>
+
+</menu>
