@@ -15,6 +15,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import com.happycity.project.happy_shipper.R;
 import com.happycity.project.happy_shipper.ui.fragment.DeliveredFragment;
@@ -100,25 +101,19 @@ public class HomeActivity extends AppCompatActivity
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
-
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
+        if (id == R.id.nav_home) {
+            Toast.makeText(this, "Home", Toast.LENGTH_SHORT).show();
+        } else if (id == R.id.nav_contact) {
+            Toast.makeText(this, "Contact", Toast.LENGTH_SHORT).show();
+        } else if (id == R.id.nav_logout) {
+            Toast.makeText(this, "Logout", Toast.LENGTH_SHORT).show();
         }
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }

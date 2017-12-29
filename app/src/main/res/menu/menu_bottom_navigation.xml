@@ -13,7 +13,7 @@
         android:title="@string/delivered"
         app:showAsAction="ifRoom"/>
     <item android:id="@+id/note_done"
-        android:title="@string/delivered"
+        android:title="@string/note"
         android:enabled="true"
         android:icon="@drawable/money"
         app:showAsAction="ifRoom"/>
