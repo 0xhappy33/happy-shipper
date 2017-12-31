@@ -8,5 +8,6 @@ package com.happycity.project.happy_shipper.utils;
 
 public class ActivityUtils {
 
+    public static final String ITEM_GOODS_EXTRA = "ITEM_GOODS_EXTRA";
 
 }

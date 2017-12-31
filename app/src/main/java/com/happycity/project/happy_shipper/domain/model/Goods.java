@@ -1,32 +1,46 @@
 package com.happycity.project.happy_shipper.domain.model;
 
+import java.io.Serializable;
+
 /**
  * Created by Ha Truong on 12/28/2017.
  * This is a App
  * into the com.happycity.project.happy_shipper.domain.model
  */
-
-public class Goods {
+@SuppressWarnings("serial")
+public class Goods implements Serializable{
     private String idGoods;
     private String fromAddress;
     private String toAddress;
     private String km;
     private String shipMoney;
     private String payMoney;
+    private String user;
 
-    public Goods(String idGoods, String fromAddress, String toAddress, String km, String shipMoney, String payMoney) {
+
+    public Goods(String idGoods, String fromAddress, String toAddress) {
+        this.idGoods = idGoods;
+        this.fromAddress = fromAddress;
+        this.toAddress = toAddress;
+    }
+
+    public Goods(String idGoods, String fromAddress, String toAddress, String km, String shipMoney, String payMoney, String user) {
         this.idGoods = idGoods;
         this.fromAddress = fromAddress;
         this.toAddress = toAddress;
         this.km = km;
         this.shipMoney = shipMoney;
         this.payMoney = payMoney;
+        this.user = user;
     }
 
-    public Goods(String idGoods, String fromAddress, String toAddress) {
-        this.idGoods = idGoods;
-        this.fromAddress = fromAddress;
-        this.toAddress = toAddress;
+    public String getUser() {
+        return user;
+    }
+
+    public Goods setUser(String user) {
+        this.user = user;
+        return this;
     }
 
     public String getIdGoods() {

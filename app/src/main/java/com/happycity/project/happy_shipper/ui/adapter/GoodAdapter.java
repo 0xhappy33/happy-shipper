@@ -20,6 +20,7 @@ import java.util.List;
 public class GoodAdapter  extends RecyclerView.Adapter<GoodAdapter.MyViewHolder>{
 
     private List<Goods> goodsList;
+    private ItemClickListener itemClickListener;
 
     public GoodAdapter(List<Goods> goodsList){
         this.goodsList = goodsList;
@@ -38,6 +39,10 @@ public class GoodAdapter  extends RecyclerView.Adapter<GoodAdapter.MyViewHolder>
         Goods goods = goodsList.get(position);
         holder.txtToAddress.setText(goods.getToAddress());
         holder.txtFromAddress.setText(goods.getFromAddress());
+        holder.txtUser.setText(goods.getUser());
+        holder.txtDistance.setText(goods.getKm());
+        holder.txtBill.setText(goods.getPayMoney());
+        holder.txtFee.setText(goods.getShipMoney());
     }
 
     @Override
@@ -45,13 +50,30 @@ public class GoodAdapter  extends RecyclerView.Adapter<GoodAdapter.MyViewHolder>
         return goodsList.size();
     }
 
-    class MyViewHolder extends RecyclerView.ViewHolder {
+    class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         TextView txtFromAddress, txtToAddress;
+        TextView txtUser, txtFee, txtBill, txtDistance;
 
         MyViewHolder(View view) {
             super(view);
             txtFromAddress = view.findViewById(R.id.from_address);
             txtToAddress = view.findViewById(R.id.to_address);
+            txtUser = view.findViewById(R.id.txtUser);
+            txtDistance = view.findViewById(R.id.txtDistance);
+            txtFee = view.findViewById(R.id.txtFee);
+            txtBill = view.findViewById(R.id.txtBill);
+            view.setTag(view);
+            view.setOnClickListener(this);
         }
+
+        @Override
+        public void onClick(View view) {
+            if (itemClickListener != null)
+                itemClickListener.onClick(view, getPosition());
+        }
+    }
+
+    public void setClickListener(ItemClickListener itemClickListener){
+        this.itemClickListener = itemClickListener;
     }
 }

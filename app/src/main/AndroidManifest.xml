@@ -18,7 +18,8 @@
         <activity
             android:name=".ui.activity.LoginActivity"
             android:label="@string/title_activity_login"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden|adjustPan">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -29,7 +30,9 @@
             android:name=".ui.activity.HomeActivity"
             android:label="@string/title_activity_home"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".ui.activity.GoodsDetailActivity"></activity>
+        <activity android:name=".ui.activity.GoodsDetailActivity"
+            android:label="@string/title_activity_detail"/>
+
     </application>
 
 </manifest>
